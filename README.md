@@ -13,7 +13,11 @@ __Once pip is in your venv there is no need to reference the 'py' env var path__
 > django-admin startproject '[project-name-here]'
 > python manage.py migrate
 > python manage.py createsuperuser
-> 
+
+
+> python manage.py makemigrations
+> python manage.py migrate
+> python manage.py runserver
 
 
 ##

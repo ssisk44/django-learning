@@ -1,6 +1,7 @@
 import uuid
 
 from django.db import models
+from django.urls import reverse
 from django.utils.text import slugify
 
 from publishers.models import Publisher
@@ -13,8 +14,6 @@ from django.core.files import File
 from PIL import Image
 
 
-
-
 # Create your models here.
 class BookTitle(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -23,6 +22,14 @@ class BookTitle(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+
+    @property
+    def books(self):
+        return self.book_set.all()
+
+    def get_absolute_url(self):
+        return reverse('books:detail', kwargs={'pk': self.pk})
+
 
     def __str__(self):
         return f"Book name: {self.title}"

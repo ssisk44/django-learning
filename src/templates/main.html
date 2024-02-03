@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}home{% endblock title %}
+
+{% block content %}
+    {{ obj.title }} <br/>
+    ISBN: {{ obj.isbn }}
+
+    <br/><br/>
+    Customers: <br/>
+    {% if qs %}
+        <ul>
+            {% for obj in qs %}
+                <li>{{ obj.first_name }}, {{ obj.last_name }} ({{ obj.username }})</li>
+            {% endfor %}
+        </ul>
+
+
+    {% else %}
+        No customers in the db.
+    {% endif %}
+
+
+{% endblock content %}
