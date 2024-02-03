@@ -26,3 +26,7 @@ __Once pip is in your venv there is no need to reference the 'py' env var path__
 > * .gitignore to prevent secret information leakage and excess clutter in source control program  
 > * place "secret" values in .env, AND add .env to .gitignore  
 > * add all packages to requirements.txt (https://stackoverflow.com/questions/41457612/how-to-fix-error-with-freetype-while-installing-all-packages-from-a-requirements/41458329#41458329)  
+
+
+> SETTING UP AWS
+https://www.linkedin.com/pulse/deploy-django-application-ec2-postgresql-s3-domain-ssl-rashid-xcepf/?trk=article-ssr-frontend-pulse_more-articles_related-content-card

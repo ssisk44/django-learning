@@ -8,7 +8,7 @@ class Customer(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     username = models.CharField(max_length=100, unique=True, blank=True)
-    additionalInfo = models.TextField(blank=True)
+    additional_info = models.TextField(blank=True)
     rating = models.PositiveSmallIntegerField(default=50)
     books = models.ManyToManyField(Book, blank=True, help_text="Currently rented books")
     book_count = models.PositiveSmallIntegerField(default=0)

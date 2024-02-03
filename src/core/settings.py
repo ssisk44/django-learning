@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
     # 3rd party apps
     'django_countries',
+    'import_export',
     # 'qr_code'
 ]
 
@@ -92,6 +93,18 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+#### AWS RDS CONFIG
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'test-django-learning-db',
+#         'USER': 'chamlwrlstepruwr',
+#         'PASSWORD': '3ez-d&lF&tr9mlqe',
+#         'HOST': 'myrdshost.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation

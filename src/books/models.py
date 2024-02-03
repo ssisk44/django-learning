@@ -6,6 +6,7 @@ from django.utils.text import slugify
 
 from publishers.models import Publisher
 from authors.models import Author
+from rentals.choices import STATUS_CHOICES
 
 # qrcode imports
 import qrcode
@@ -48,6 +49,13 @@ class Book(models.Model):
 
     def __str__(self):
         return f"{self.title}"
+
+    @property
+    def status(self):
+        if len(self.rental_set.all()) > 0:  # return most recent rental
+            statuses = dict(STATUS_CHOICES)
+            return statuses[self.rental_set.first().status]
+        return False
 
     def save(self, *args, **kwargs):
         if not self.isbn:
