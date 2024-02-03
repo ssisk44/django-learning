@@ -1,5 +1,5 @@
 ##
-# Django Learning Repo
+# Django w/ Tailwind CSS Learning Repo
 ##
 ### INSTALLATION & SETUP <br/>
 __Environment Variables: py = '[path to python here]/python.exe'__
